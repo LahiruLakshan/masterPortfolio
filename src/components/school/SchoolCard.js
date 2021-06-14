@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./DegreeCard.css";
+import "./SchoolCard.css";
 import { Fade, Flip } from "react-reveal";
 
-class DegreeCard extends Component {
+class SchoolCard extends Component {
   render() {
-    const degree = this.props.degree;
+    const school = this.props.school;
     const theme = this.props.theme;
     return (
       <div className="degree-card">
@@ -14,10 +14,10 @@ class DegreeCard extends Component {
               style={{
                 maxWidth: "100%",
                 maxHeight: "100%",
-                transform: "scale(75%, 75%)",
+                transform: "scale(200%, 200%)",
               }}
-              src={require(`../../assests/images/${degree.logo_path}`)}
-              alt={degree.alt_name}
+              src={require(`../../assests/images/${school.logo_path}`)}
+              alt={school.alt_name}
             />
           </div>
         </Flip>
@@ -29,20 +29,20 @@ class DegreeCard extends Component {
             >
               <div className="body-header-title">
                 <h2 className="card-title" style={{ color: theme.text }}>
-                  {degree.title}
+                  {school.title}
                 </h2>
                 <h3 className="card-subtitle" style={{ color: theme.text }}>
-                  {degree.subtitle}
+                  {school.subtitle}
                 </h3>
               </div>
               <div className="body-header-duration">
                 <h3 className="duration" style={{ color: theme.text }}>
-                  {degree.duration}
+                  {school.duration}
                 </h3>
               </div>
             </div>
             <div classname="body-content">
-              {degree.descriptions.map((sentence) => {
+              {school.descriptions.map((sentence) => {
                 return (
                   <p className="content-list" style={{ color: theme.text }}>
                     {sentence}
@@ -50,7 +50,7 @@ class DegreeCard extends Component {
                 );
               })}
               <a
-                href={degree.website_link}
+                href={school.website_link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -71,4 +71,4 @@ class DegreeCard extends Component {
   }
 }
 
-export default DegreeCard;
+export default SchoolCard;
